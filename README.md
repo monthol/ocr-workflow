@@ -36,3 +36,29 @@ Now you can run tesseract (recommend setting for tha, psm=1 and oem=1) and copy 
 docker exec -it t4cmp tesseract thatest.jpg thatest -l tha --psm 1 --oem 1 pdf hocr
 docker cp t4cmp:/home/thatest.pdf ./thatest.pdf
 ```
+###Output option
+####pdf with text only
+```
+docker exec -it t4cmp tesseract thatest.jpg thatest -l tha --psm 1 --oem 1 -c textonly_pdf=1 pdf hocr
+```
+####tsv
+```
+docker exec -it t4cmp tesseract thatest.jpg thatest -l tha --psm 1 --oem 1 txt pdf hocr tsv
+```
+####Create character box file use in hocr
+This can be explored to be use to modify characters and bounding box for hocr. More [here](https://github.com/tesseract-ocr/tesseract/wiki/Training-Tesseract-%E2%80%93-Make-Box-Files).
+```
+docker exec -it t4cmp tesseract thatest.jpg thatest -l tha --psm 1 --oem 1 makebox txt hocr
+```
+####To remove extra spaces and preserve only interword-spaces, as suggested in [#1009](https://github.com/tesseract-ocr/tesseract/issues/1009) and [#991](https://github.com/tesseract-ocr/tesseract/issues/991).
+```
+docker exec -it t4cmp tesseract thatest.jpg thatest -l tha --psm 1 --oem 1 -c preserve_interword_spaces=1 txt
+```
+####List of parameters
+```
+docker exec -it t4cmp tesseract --print-parameters
+```
+####Restart docker container
+```
+docker start t4cmp
+```
