@@ -62,3 +62,29 @@ docker exec -it t4cmp tesseract --print-parameters
 ```
 docker start t4cmp
 ```
+#Training with OCROpus
+To create the TRUTH data, use command **ocropus-gtedit**
+
+
+This created html file with each line the editable text box to manually type in.
+```
+>ocropus-gtedit extract temp-correction-gt.html
+```
+This extracted the html input data in the textbox in seperated file.
+
+training with existing model **--load**
+```
+>ocropus-rtrain --load en-default-pyrnn.gz -o \[model-name] book/0001/*.bin.png
+```
+The training can not be done with existing model at the moment, as far as I know, the error of 
+```
+>ocropus-rtrain -o \[model-name] book/0001/*.bin.png
+```
+Run the prediction of test set
+```
+ocropus-rpred -m [model-name] 'book/0001/??????.bin.png'
+```
+###Resources
+1. [work flow explained](https://graal.hypotheses.org/786)
+
+
