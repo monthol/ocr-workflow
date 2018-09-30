@@ -62,10 +62,11 @@ docker exec -it t4cmp tesseract --print-parameters
 ```
 docker start t4cmp
 ```
-#Training with OCROpus
+# Training with OCROpus
 To create the TRUTH data, use command **ocropus-gtedit**
-
-
+```
+ocropus-gtedit html book/0001/??????.bin.png -o temp-correction.html
+```
 This created html file with each line the editable text box to manually type in.
 ```
 >ocropus-gtedit extract temp-correction-gt.html
@@ -84,7 +85,7 @@ Run the prediction of test set
 ```
 ocropus-rpred -m [model-name] 'book/0001/??????.bin.png'
 ```
-###Resources
+### Resources
 1. [work flow explained](https://graal.hypotheses.org/786)
 
 
