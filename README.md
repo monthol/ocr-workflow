@@ -63,6 +63,19 @@ docker exec -it t4cmp tesseract --print-parameters
 docker start t4cmp
 ```
 # Training with OCROpus
+By using Conda, first create environment and activate it
+```
+>source activate ocropus_env
+```
+To list available environments:
+```
+>conda info -envs
+```
+To exit from environment:
+```
+>source deactivate
+```
+
 To create the TRUTH data, use command **ocropus-gtedit**
 ```
 ocropus-gtedit html book/0001/??????.bin.png -o temp-correction.html
