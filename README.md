@@ -62,6 +62,11 @@ docker exec -it t4cmp tesseract --print-parameters
 ```
 docker start t4cmp
 ```
+#### Run Tesseract on images in a folder
+```
+for i in *.tif ; do tesseract $i outtext;  done;
+```
+
 # Training with OCROpus
 By using Conda, first create environment and activate it
 ```
