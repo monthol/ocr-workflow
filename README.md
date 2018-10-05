@@ -66,6 +66,8 @@ docker start t4cmp
 ```
 for i in *.tif ; do tesseract $i outtext;  done;
 ```
+### Scantailor
+To install scantailor on Mac follow instruction [here](https://github.com/scantailor/scantailor/issues/273#issuecomment-357964331)
 
 # Training with OCROpus
 By using Conda, first create environment and activate it
