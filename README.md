@@ -53,6 +53,7 @@ docker exec -it t4cmp tesseract thatest.jpg thatest -l tha --psm 1 --oem 1 makeb
 #### To remove extra spaces and preserve only interword-spaces, as suggested in [#1009](https://github.com/tesseract-ocr/tesseract/issues/1009) and [#991](https://github.com/tesseract-ocr/tesseract/issues/991).
 ```
 docker exec -it t4cmp tesseract thatest.jpg thatest -l tha --psm 1 --oem 1 -c preserve_interword_spaces=1 txt
+tesseract IMG_5339_L.tif IMG_5339 -l tha --psm 1 --oem 1 -c textord_min_linesize=3.25 txt
 ```
 #### List of parameters
 ```
